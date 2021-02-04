@@ -2055,3 +2055,110 @@
     float: right;
 }
 /*-- Tabbedlist -ended   ---*/
+
+
+              /* Adavanced carousel  */
+.kore-chat-window .advanced-advancedCarousel {
+    border: 5px solid var(--sdk-chat-widow-default-white);
+    color: var(--sdk-chat-widow-default-white);
+    float: left;
+    font-size: 20px;
+    height: auto;
+    text-align: center;
+    width: 216px;
+}
+.kore-chat-window .advancedCarousel-carouselImageContent {
+    /* width: 216px; */
+    width: 100%;
+    height: 139px;
+    background-color: var(--sdk-chat-widow-default-white);
+    cursor: pointer;
+}
+
+.kore-chat-window .advancedCarousel-carouselImageContent img {
+    /* width: 216px; */
+    width: 100%;
+    height: 139px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: solid 1px var(--sdk-chat-widow-primary-border-color);
+    border-bottom: none;
+}
+.kore-chat-window .advancedCarousel-carouselTitleBox {
+    /* width: 206px; */
+    width: 100%;
+    height: auto;
+    background-color: var(--sdk-chat-widow-default-white);
+    border: solid 1px var(--sdk-chat-widow-primary-border-color);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    cursor: auto;
+    padding: 20px 15px;
+}
+.kore-chat-window .advancedCarousel-carouselTitleBox .advancedCarousel-carouselDescription {
+    font-size: 12px;
+    letter-spacing: -0.1px;
+    text-align: left;
+    line-height: 1.54;
+    color: var(--sdk-chat-widow-secondary-font-color);
+    max-width: 192px;
+    /* margin: 8px 0px 8px 11px; */
+    margin: 0;
+}
+.kore-chat-window .advancedCarousel-carouselTitleBox .advancedCarousel-carouselDefaultAction {
+    font-size: 12px;
+    letter-spacing: -0.1px;
+    text-align: left;
+    line-height: 1.54;
+    color: #0076ff;
+    cursor: pointer;
+    max-width: 187px;
+    /* margin: -5px 2px 8px 11px; */
+    margin: 0;
+    margin-bottom: 15px;
+}
+.kore-chat-window .advancedCarousel-carouselTitleBox .advancedCarousel-carouselButton {
+    /* width: 215px; */
+    height: 48px;
+    background-color: transparent;
+    border-top: solid 1px var(--sdk-chat-widow-primary-border-color);
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    line-height: 1.54;
+    color: #0076ff;
+    cursor: pointer;
+    /* max-width: 215px; */
+    width: 100%;
+    padding-top: 13px;
+}
+.kore-chat-window .advancedCarousel-carouselTitleBox .advancedCarousel-IteMId {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.54;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: var(--sdk-chat-widow-primary-font-color);
+    max-width: 230px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* margin: 10px 2px 27px 11px; */
+    margin: 0;
+    width: 100%;
+}
+
+.kore-chat-window .carouselTitleBox .carouselTitle {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.54;
+    letter-spacing: -0.1px;
+    text-align: left;
+    color: var(--sdk-chat-widow-primary-font-color);
+    max-width: 230px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    /* margin: 8px 0px 0px 11px; */
+}

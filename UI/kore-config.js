@@ -11,11 +11,11 @@
     botOptions.koreAnonymousFn = koreAnonymousFn;
     botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
 
-    botOptions.JWTUrl = "PLEASE_ENTER_JWTURL_HERE";
-    botOptions.userIdentity = 'PLEASE_ENTER_USER_EMAIL_ID';// Provide users email id here
-    botOptions.botInfo = { name: "PLEASE_ENTER_BOT_NAME", "_id": "PLEASE_ENTER_BOT_ID" }; // bot name is case sensitive
-    botOptions.clientId = "PLEASE_ENTER_CLIENT_ID";
-    botOptions.clientSecret = "PLEASE_ENTER_CLIENT_SECRET";
+    botOptions.JWTUrl = "https://mk2r2rmj21.execute-api.us-east-1.amazonaws.com/dev/users/sts";
+    botOptions.userIdentity = 'sainath.bhima@kore.com';// Provide users email id here
+    botOptions.botInfo = { name: "HR and IT Assist New Templates", "_id": "st-e300b300-d1b3-567b-93c4-4b923d7383c3" }; // bot name is case sensitive
+    botOptions.clientId = "cs-31629444-de48-5451-b7bc-4486d93abeac";
+    botOptions.clientSecret = "S2PFq22VQYG0ZfmxY4EWmU5riELFd0CDZjd7TgcPbgE=";
 	
 // To modify the web socket url use the following option
 // botOptions.reWriteSocketURL = {
