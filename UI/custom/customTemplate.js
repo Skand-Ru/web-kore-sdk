@@ -54,7 +54,7 @@
 			});
 			$(messageHtml).data(msgData);
 			this.bindEvents(messageHtml);
-		} else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "tableList") {
+		} else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "tableListTemplate") {
 			messageHtml = $(this.getChatTemplate("tableListTemplate")).tmpl({
 				'msgData': msgData,
 				'helpers': this.helpers,
@@ -123,6 +123,22 @@
 					scrollTop: this.chatContainerConfig.config.chatContainer.prop("scrollHeight")
 				}, 0);
 			});
+		}
+		else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "advancedTableListTemplate") {
+			messageHtml = $(this.getChatTemplate("advancedTableListTemplate")).tmpl({
+				'msgData': msgData,
+				'helpers': this.helpers,
+				'extension': this.extension
+			});
+			this.bindEvents(messageHtml);
+		}
+		else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "ticketApprovalTemplate") {
+			messageHtml = $(this.getChatTemplate("ticketApprovalTemplate")).tmpl({
+				'msgData': msgData,
+				'helpers': this.helpers,
+				'extension': this.extension
+			});
+			this.bindEvents(messageHtml);
 		}
 	   return messageHtml;
 	
@@ -1619,7 +1635,9 @@ print(JSON.stringify(message)); */
 	{{/if}} \
 	</script>';
 
-
+                      //  ADVANCE CAROUSEL LIST TEMPLATE STARTS HERE // copy the else if statent for advance carousel while copying advance carousel changes
+					  // and copy else if statement for advancedCarousel from customTemplate.prototype.renderMessage function
+					  // CSS also mentioned in customTemplate.css between the starting tags and ending tags
 
 					var advancedCarousel = '<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
 				{{if msgData.message}} \
@@ -1630,7 +1648,7 @@ print(JSON.stringify(message)); */
 						{{if msgData.message[0].component.payload.text}}<div class="messageBubble tableChart">\
 							<span>{{html helpers.convertMDtoHTML(msgData.message[0].component.payload.text, "bot")}}</span>\
 						</div>{{/if}}\
-						<div class="carousel" id="carousel-one-by-one" style="height: 0px;">\
+						<div class="carousel advanced-carousel" id="carousel-one-by-one" style="height: 0px;">\
 							{{each(key, msgItem) msgData.message[0].component.payload.elements}} \
 								<div class="slide advanced-advancedCarousel">\
 									{{if msgItem.image_url}} \
@@ -1657,6 +1675,112 @@ print(JSON.stringify(message)); */
 					</li> \
 				{{/if}}\
 			</scipt>';
+
+			                 //  ADVANCE CAROUSEL LIST TEMPLATE ENDS HERE //
+			              
+                            //  ADVANCE TABLE LIST TEMPLATE STARTS HERE // copy the else if statent for advancedTableListTemplate while copying advanced table list changes
+							// and copy else if statement for advancedTableListTemplate from customTemplate.prototype.renderMessage function
+							// CSS also mentioned in customTemplate.css between the starting tags and ending tags
+
+
+					var advancedTableListTemplate = '<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
+					{{if msgData.message}} \
+						<li {{if msgData.type !== "bot_response"}}id="msg_${msgItem.clientMessageId}"{{/if}} class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon"> \
+							<div class="listTmplContent advanced-table-list-template"> \
+								{{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
+								{{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+									<div class="{{if msgData.message[0].component.payload.fromHistory}}dummy advTbleListTmplt {{else}}advTbleListTmplt{{/if}} ">\
+									<div class="advancedTableListTemplate-data">\
+										{{if msgData.message[0] && msgData.message[0].component && msgData.message[0].component.headingSection && msgData.message[0].component.headingSection.viewOutagel}}\
+											<div class="logo-block">\
+												<div class="logo-img" {{if msgData.message[0].component.headingSection.viewOutagel.color}}style="color:${msgData.message[0].component.headingSection.viewOutagel.color}" {{/if}}>{{if msgData.message[0].component.headingSection.viewOutagel.icon}}<div class="img-source" style="background-image:url(${msgData.message[0].component.headingSection.viewOutagel.icon})"></div>{{/if}}<span class="image-label">${msgData.message[0].component.headingSection.viewOutagel.label}</span></div>\
+												<div class="status-block">${msgData.message[0].component.headingSection.status}</div>\
+											</div>\
+										{{/if}}\
+										{{if msgData.message[0] && msgData.message[0].component && msgData.message[0].component.elements}}\
+											{{each(index,element) msgData.message[0].component.elements}}\
+												<div class="info-text-block">\
+													<div class="title">${element.label}</div>\
+													<div class="time-title-block">\
+														<div class="date">${element.date}</div>\
+														<div class="am-pm">${element.time}</div>\
+													</div>\
+												</div>\
+											{{/each}}\
+										{{/if}}\
+										{{if msgData.message[0].component.description}}\
+											<div class="desc_block">\
+											{{if msgData.message[0].component.description.title}}\
+												<div class="desc_text_title">${msgData.message[0].component.description.title}</div>\
+												{{/if}}\
+												{{if msgData.message[0].component.description.title}}\
+												<div class="desc_text_info">${msgData.message[0].component.description.value}</div>\
+												{{/if}}\
+											</div>\
+										{{/if}}\
+									</div>\
+								<div>\
+							</div>\
+						</li>\
+					{{/if}}\
+				</scipt>';
+                         //  ADVANCE TABLE LIST TEMPLATE ENDS HERE //
+
+				    //  TICKET APPROVAL TEMPLATE STARTS HERE //  copy the else if statent for ticketApprovalTemplate while copying ticketApprovaltemplate changes
+					// and copy else if statement for ticketApprovalTemplate from customTemplate.prototype.renderMessage function
+					// CSS also mentioned in customTemplate.css between the starting tags and ending tags
+
+
+				var ticketApprovalTemplate = '<script id="chat_message_tmpl" type="text/x-jqury-tmpl"> \
+				{{if msgData.message}} \
+				<li {{if msgData.type !== "bot_response"}}id="msg_${msgItem.clientMessageId}"{{/if}} class="{{if msgData.type === "bot_response"}}fromOtherUsers{{else}}fromCurrentUser{{/if}} with-icon"> \
+					<div class="ticket-approval-template"> \
+						{{if msgData.createdOn}}<div aria-live="off" class="extra-info">${helpers.formatDate(msgData.createdOn)}</div>{{/if}} \
+						{{if msgData.icon}}<div aria-live="off" class="profile-photo"> <div class="user-account avtar" style="background-image:url(${msgData.icon})"></div> </div> {{/if}} \
+							<div class="{{if msgData.message[0].component.payload.fromHistory}}dummy ticketApprovalTemplate {{else}}ticketApprovalTemplate{{/if}} ">\
+							<div class="ticket-approval-template-content">\
+								{{if msgData.message[0] && msgData.message[0].component && msgData.message[0].component.headingSection && msgData.message[0].component.headingSection.userInfo}}\
+									<div class="logo-block">\
+									<div class="block-heading">Requested By:</div>\
+										<div class="logo-img">{{if msgData.message[0].component.headingSection.userInfo.requestedByHeading}}${msgData.message[0].component.headingSection.userInfo.ticketNumber}{{/if}}{{if msgData.message[0].component.headingSection.userInfo.userProfileIcon}}<div class="img-source" style="background-image:url(${msgData.message[0].component.headingSection.userInfo.userProfileIcon})"></div>{{/if}}<span class="block-label">${msgData.message[0].component.headingSection.userInfo.userName}</span></div>\
+										<div class="ticket-number-block">${msgData.message[0].component.headingSection.userInfo.ticketNumber}</div>\
+									</div>\
+								{{/if}}\
+								{{if msgData.message[0] && msgData.message[0].component && msgData.message[0].component.elements}}\
+									{{if msgData.message[0].component.elements}}\
+										{{if msgData.message[0].component.elements.requestBody}}\
+										<div class="request-body">\
+											<div class="request-header">${msgData.message[0].component.elements.requestBody.requestHeading}</div>\
+											<div class="request-description">${msgData.message[0].component.elements.requestBody.requestHeadingDescription}</div>\
+											<div class="description-block">\
+												<div class="description-header">${msgData.message[0].component.elements.requestBody.descriptionHeading}</div>\
+												<div class="description-description">${msgData.message[0].component.elements.requestBody.descriptionContent}</div>\
+											</div>\
+											<div class="time-description-block">\
+												${msgData.message[0].component.elements.requestBody.ticketTimeOn}\
+											</div>\
+										</div>\
+										{{/if}}\
+										{{if msgData.message[0].component.elements.buttons && msgData.message[0].component.elements.buttons.length}}\
+											<div class="buttons-block">\
+												{{each(index,buttonInfo) msgData.message[0].component.elements.buttons}}\
+												<div class="button-info" {{if buttonInfo && buttonInfo.backgroundColor}}style="background-color:${buttonInfo.backgroundColor}{{/if}} {{if buttonInfo && buttonInfo.color}}style="color:${buttonInfo.color}{{/if}} {{if buttonInfo && buttonInfo.borderColor}}style="color:1px solid ${buttonInfo.borderColor}{{/if}}>\
+													${buttonInfo.title}\
+												</div>\
+												{{/each}}\
+											</div>\
+										{{/if}}\
+									{{/if}}\
+								{{/if}}\
+							</div>\
+						<div>\
+					</div>\
+				</li>\
+				{{/if}}\
+				</scipt>';
+
+         //  TICKET APPROVAL TEMPLATE ENDS HERE //
+
 	
 		if (tempType === "dropdown_template") {
 			return dropdownTemplate;
@@ -1681,6 +1805,12 @@ print(JSON.stringify(message)); */
 		}
 		else if(tempType === "advancedCarousel"){
 			return advancedCarousel;
+		}
+		else if(tempType === "advancedTableListTemplate"){
+			return advancedTableListTemplate;
+		}
+		else if(tempType === "ticketApprovalTemplate"){
+			return ticketApprovalTemplate;
 		}
 		else {
 			return "";
