@@ -48,7 +48,8 @@
   
 
   if(chatConfig.isFromFinastra){
-    botOptions.JWTUrl = "https://integrations-finastra.kore.ai/finastra-wrapper/token";
+    // botOptions.JWTUrl = "https://integrations-finastra.kore.ai/finastra-wrapper/token";
+    botOptions.JWTUrl = "https://staging-bankassist.korebots.com/finastra-wrapper/token";
     botOptions.brandingAPIUrl = "";
     botOptions.userIdentity = '';// Provide users email id here
     botOptions.botInfo = { name: "Banking Assist", "_id": "",customData:{"rtmType":"web"}}; // bot name is case sensitive
