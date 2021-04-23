@@ -176,6 +176,9 @@
 
 /*global css */
 
+body, html{
+    font-family: 'DDINCondensed';
+}
 .kore-chat-window .pos-absolute {
     position: absolute!important;
 }
@@ -513,6 +516,7 @@
     padding-left: 15px;
    /* color: var(--sdk-chat-widow-bot-chat-bubble-text-color);*/
     color: var(--sdk-chat-widow-widget-text-color);
+    font-family: 'DDINBold' !important;
 }
 
 /* .kore-chat-window .kore-chat-header .header-title.ui-draggable-handle {
@@ -578,7 +582,7 @@
     top: 90px;
     bottom: 75px;
     background-color: var(--sdk-chat-widow-widget-body-color);
-    font-family: "Lato", sans-serif;
+    font-family: 'DDINCondensed';
     font-size: 14px;
 }
 

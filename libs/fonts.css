@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'DDINCondensed';
+    src: url('./fonts/DDIN/DDINCondensed.eot');
+    src: url('./fonts/DDIN/DDINCondensed.eot') format('embedded-opentype'),
+         url('./fonts/DDIN/DDINCondensed.woff2') format('woff2'),
+         url('./fonts/DDIN/DDINCondensed.woff') format('woff'),
+         url('./fonts/DDIN/DDINCondensed.ttf') format('truetype'),
+         url('./fonts/DDIN/DDINCondensed.svg#DDINCondensed') format('svg');
+}
+
+
+@font-face {
+    font-family: 'DDINBold';
+    src: url('./fonts/DDIN/DDINBold.eot');
+    src: url('./fonts/DDIN/DDINBold.eot') format('embedded-opentype'),
+         url('./fonts/DDIN/DDINBold.woff2') format('woff2'),
+         url('./fonts/DDIN/DDINBold.woff') format('woff'),
+         url('./fonts/DDIN/DDINBold.ttf') format('truetype'),
+         url('./fonts/DDIN/DDINBold.svg#DDINBold') format('svg');
+}
