@@ -1123,7 +1123,6 @@
                     
                 }else{
                     chatWindowHtml.addClass('minimize');
-                    chatWindowHtml.find('.minimized-title').html("Talk to " + me.config.chatTitle);
                     me.skipedInit=true;
                     if(me.config.multiPageApp && me.config.multiPageApp.enable && maintainContext){
                         setTimeout(function () {
@@ -3082,7 +3081,7 @@
                 <div class="kr-wiz-menu-chat defaultTheme-kore">\
                 </div>	\
                     <div class="minimized-title"></div> \
-                    <div class="minimized"><span class="messages"></span></div> \
+                    <div class="minimized"><p class="minimized-Alcon-title">Need Assistance?</p></div> \
                     <div class="kore-chat-header"> \
                         <div id="botHeaderTitle" aria-labelledby="botHeaderTitle" class="header-title" title="${chatTitle}">${chatTitle}</div> \
                         <div class="chat-box-controls"> \
