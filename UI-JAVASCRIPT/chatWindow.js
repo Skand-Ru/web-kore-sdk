@@ -2039,7 +2039,6 @@ function koreBotChat() {
                                 </div>';
             }
             var chatWindowTemplate = '<div class="kore-chat-window" id="koreChatWindow"> \
-									<div class="minimized-title"></div> \
 									<div class="minimized"><span class="messages"></span></div> \
 					<div class="kore-chat-header"> \
 						<div class="header-title" title="'+ tempData.chatTitle + '">' + tempData.chatTitle + '</div> \

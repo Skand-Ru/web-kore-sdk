@@ -11,7 +11,7 @@
 
     /* Bot message variable */
 
-    --sdk-chat-window-bot-bubble-bg:#F1F0F0;
+    --sdk-chat-window-bot-bubble-bg:#1e5799;
     --sdk-chat-window-bot-bubble-font-clr:#333;
     --sdk-chat-window-bot-bubble-shape:12px 12px 12px 2px;
     --sdk-chat-window-bot-bubble-border-clr:#F1F0F0;
@@ -26,8 +26,8 @@
 
     /* button colors chat window */
 
-    --sdk-chat-window-btn-default-bg:#FFFFFF;
-    --sdk-chat-window-btn-border-clr:#009dab;
+    --sdk-chat-window-btn-default-bg:#1e5799;
+    --sdk-chat-window-btn-border-clr:#1e5799;
     --sdk-chat-window-btn-font-clr:#009dab;
     --sdk-chat-window-btn-hover-bg:#009dab;
     --sdk-chat-window-btn-hover-border-clr:#009dab;
@@ -175,8 +175,8 @@
 
     /* button colors chat window */
 
-    --sdk-chat-window-btn-default-bg:#0D6EFD;
-    --sdk-chat-window-btn-border-clr:#0D6EFD;
+    --sdk-chat-window-btn-default-bg:#0659d2;
+    --sdk-chat-window-btn-border-clr:#0659d2;
     --sdk-chat-window-btn-font-clr:#ffffff;
     --sdk-chat-window-btn-hover-bg:#0659d2;
     --sdk-chat-window-btn-hover-border-clr:#0659d2;
@@ -208,7 +208,7 @@
 
     --sdk-chat-widow-default-white: #ffffff;
     --sdk-chat-widow-primary-font-color: #202124;
-    --sdk-chat-widow-primary-blue-color: #0D6EFD;
+    --sdk-chat-widow-primary-blue-color: #0659d2;
     --sdk-chat-widow-primary-border-color: #e9eff5;
     --sdk-chat-widow-primary-bg-color: #ffffff;
     --sdk-chat-widow-panel-header-bg-color:#F8F9FA;
@@ -325,7 +325,7 @@
 
     /* button colors chat window */
 
-    --sdk-chat-window-btn-default-bg:var(--sdk-chat-custom--buttons-defaultButtonColor);
+    --sdk-chat-window-btn-default-bg:#1e5799;
     --sdk-chat-window-btn-border-clr:#009dab;
     --sdk-chat-window-btn-font-clr:var(--sdk-chat-custom--buttons-defaultFontColor);
     --sdk-chat-window-btn-hover-bg:var(--sdk-chat-custom--buttons-onHoverButtonColor);
@@ -644,7 +644,7 @@
 .kore-chat-window.minimize .minimized-title {
     float: left;
     max-width: 0px;
-    width: auto;
+    width: 0;
     text-align: right;
     font-size: 14px;
     margin-right: 35px;
@@ -656,8 +656,6 @@
     display: block;
     opacity: 0;
     cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.6s ease-in;
 }
 
 .kore-chat-window.minimize:hover .minimized-title {
