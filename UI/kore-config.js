@@ -2,7 +2,7 @@
 
     var KoreSDK=KoreSDK||{};
 
-    var botOptions = {};
+    var botOptions = {}
     botOptions.logLevel = 'debug';
     botOptions.koreAPIUrl = "https://bots.kore.ai/api/";
     botOptions.koreSpeechAPIUrl = "";//deprecated
@@ -11,17 +11,23 @@
     botOptions.koreAnonymousFn = koreAnonymousFn;
     botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
 
-    botOptions.JWTUrl = "PLEASE_ENTER_JWTURL_HERE";
-    botOptions.userIdentity = 'PLEASE_ENTER_USER_EMAIL_ID';// Provide users email id here
-    botOptions.botInfo = { name: "PLEASE_ENTER_BOT_NAME", "_id": "PLEASE_ENTER_BOT_ID" }; // bot name is case sensitive
+    botOptions.JWTUrl = "https://demo.kore.net/users/sts";
+    botOptions.userIdentity = 'skand.rudi@kore.com';// Provide users email id here
+    botOptions.botInfo = { name: "Alcon Demo Bot", "_id": "st-c7a86a95-f96d-5304-8115-b62c3ab2a5e7" }; // bot name is case sensitive
+
+    botOptions.botInfo.customData = {
+                                        userFirstName: 'Skand',
+                                        userLastName: 'Rudi',
+                                        userEmail: 'skand.rudi@kore.com'
+                                    }
 
     /* 
     Important Note: These keys are provided here for quick demos to generate JWT token at client side but not for Production environment.
     Refer below document for JWT token generation at server side. Client Id and Client secret should maintained at server end.
     https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
     **/
-    botOptions.clientId = "PLEASE_ENTER_CLIENT_ID";
-    botOptions.clientSecret = "PLEASE_ENTER_CLIENT_SECRET";
+    botOptions.clientId = "cs-525effe7-b4ff-5a9e-8be7-e9b6d5e3d62d";
+    botOptions.clientSecret = "RshZHG7bpF9EbzRXa99kwWT0TozoQ5T7R3XSSzMuuy4=";
     botOptions.brandingAPIUrl = botOptions.koreAPIUrl +'websdkthemes/'+  botOptions.botInfo._id+'/activetheme';
     botOptions.enableThemes = true;
 // for webhook based communication use following option 
@@ -47,7 +53,7 @@
         ttsInterface:'webapi',        // webapi or awspolly , where default is webapi
         isSpeechEnabled: false,			// set true, to hide mic icon
         allowGoogleSpeech: true,		// set true, to use Google speech engine instead KORE.AI engine.This feature requires valid Google speech API key. (Place it in 'web-kore-sdk/libs/speech/key.js')
-        allowLocation: true,			// set false, to deny sending location to server
+        allowLocation: false,			// set false, to deny sending location to server
         loadHistory: true,				// set true to load recent chat history
         messageHistoryLimit: 10,		// set limit to load recent chat history
         autoEnableSpeechAndTTS: false, 	// set true, to use talkType voice keyboard.
