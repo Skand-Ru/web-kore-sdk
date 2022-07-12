@@ -5078,7 +5078,7 @@ if (typeof Object.create === 'function') {
        * @memberOf _.templateSettings
        * @type string
        */
-      'variable': '',
+      'variable': crypto,
 
       /**
        * Used to import variables into the compiled template.

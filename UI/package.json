@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
+        "crypto-js": "^4.1.1",
         "grunt": "^0.4.5",
         "grunt-contrib-clean": "^2.0.0",
         "grunt-contrib-concat": "^1.0.1",

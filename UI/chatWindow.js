@@ -728,7 +728,7 @@
                 this.config = {
                     "chatTitle": "Kore.ai Bot Chat",
                     "container": "body",
-                    "allowIframe": false,
+                    "allowIframe": true,
                     "botOptions": cfg.botOptions
                 };
                 koreAPIUrl = cfg.botOptions.koreAPIUrl;
@@ -869,6 +869,7 @@
             if (msgData.message && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.formData) {
                 msgData.renderType = msgData.message[0].component.payload.formData.renderType;
                 msgData.message[0].component.payload.template_type = 'iframe';
+                alert('hello');
                 if (!returnTemplate && msgData.renderType === 'inline') {
                      this.renderMessage(msgData);
                 } else {
@@ -1774,6 +1775,10 @@
                         ttsAudioSource.stop();
                     }
 
+                });
+                _chatContainer.off('click', '.closeChatBodyModal1').on('click', '.closeChatBodyModal1', function (event) {
+                    $(this).closest(".iframeTemplate").css("display","none");
+                    $(this).closest(".iframeTemplate").find("iframe").attr("src","");
                 });
                 _chatContainer.off('click', '.ttspeaker').on('click', '.ttspeaker', function (event) {
                     if (me.config.isTTSEnabled) {
@@ -3120,6 +3125,10 @@
                           <span class="closeImagePreview">&times;</span>\
                           <img class="modal-content-imagePreview" id="img01">\
                           <div id="caption"></div>\
+                    </div>\
+                    <div id="chatBodyModal" class="chatBodyModal iframeTemplate">\
+                        <span class="closeChatBodyModal1" aira-label="Close Form" role="button" tabindex="0" aria-atomic="true"></span>\
+                        <div id="chatBodyModalContent" class="addIframe"><iframe src=""></iframe></div> \
                     </div>\
                     <div id="chatBodyModal" class="chatBodyModal animate-bottom">\
                     <span class="closeChatBodyModal" aira-label="Close Form" role="button" tabindex="0" aria-atomic="true"></span>\

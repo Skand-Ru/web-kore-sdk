@@ -1,3 +1,4 @@
+
 (function($){
 	function customTemplate(data,chatInitialize) {
 		this.cfg = data;
@@ -5,15 +6,21 @@
 		this.helpers = null;
 		this.extension = null;
 	}
-	
 	/**
 	 * purpose: Function to render bot message for a given custom template
 	 * input  : Bot Message
 	 * output : Custom template HTML
 	 */
+
 	customTemplate.prototype.renderMessage = function (msgData) {
 		var messageHtml = '';
-		if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "dropdown_template") {
+		if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "iframe_template") {
+			//showing iframe for GetFeedback form.
+			$(".kore-chat-window").find(".iframeTemplate iframe").attr("src", msgData.message[0].component.payload.iframeSrc);
+			$(".kore-chat-window").find(".iframeTemplate, .closeChatBodyModal1").css('display','block');
+			return;
+		}
+		else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "dropdown_template") {
 			messageHtml = $(this.getChatTemplate("dropdown_template")).tmpl({
 				'msgData': msgData,
 				'helpers': this.helpers,
@@ -53,6 +60,7 @@
 			$(messageHtml).data(msgData);
 			this.bindEvents(messageHtml);
 		} else if (msgData.message[0] && msgData.message[0].component && msgData.message[0].component.payload && msgData.message[0].component.payload.template_type == "tableList") {
+			console.log(msgData.message[0].component.payload);
 			messageHtml = $(this.getChatTemplate("tableListTemplate")).tmpl({
 				'msgData': msgData,
 				'helpers': this.helpers,
@@ -198,8 +206,6 @@
 	* output : Custom template HTML
 	*
 	*/
-	
-	
 	customTemplate.prototype.getChatTemplate = function (tempType) {
 		/* Sample template structure for dropdown
 		var message =  {

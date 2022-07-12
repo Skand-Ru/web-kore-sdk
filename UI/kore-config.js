@@ -11,25 +11,31 @@
     botOptions.koreAnonymousFn = koreAnonymousFn;
     botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
 
-    botOptions.JWTUrl = "https://demo.kore.net/users/sts";
-    botOptions.userIdentity = 'skand.rudi@kore.com';// Provide users email id here
-    botOptions.botInfo = { name: "Alcon_Dev", "_id": "st-e777287f-16d4-5990-94e1-1a91e8a64191" }; // bot name is case sensitive
+    botOptions.JWTUrl = "https://chatbot-exp-api-dev.us-e2.cloudhub.io/api/generatetoken";
+    let userSession = '';
+    if(window.ALCON_USER && window.ALCON_USER.email){
+        userSession = window.ALCON_USER.email;
+    }else{
+        userSession = 'Anonymous.' + Math.floor(Math.random() * 10000000)+'@abc.com';
+    }
+    console.log(userSession);
 
-    botOptions.botInfo.customData = {
-                                        userFirstName: 'Skand',
-                                        userLastName: 'Rudi',
-                                        userEmail: 'skand.rudi@kore.com'
-                                    }
-
+    //botOptions.userIdentity = userSession;// Provide users email id here
+    botOptions.userIdentity = userSession;
+    botOptions.botInfo = { name: "EVA", "_id": "st-503584ee-e9ab-53b6-82b0-a3ddacb7d482" }; // bot name is case sensitive
+    //botOptions.botInfo.customData = window.ALCON_USER;
+    botOptions.botInfo.customData = window.ALCON_USER;
+    console.log("Custom data",botOptions.botInfo.customData)
     /* 
     Important Note: These keys are provided here for quick demos to generate JWT token at client side but not for Production environment.
     Refer below document for JWT token generation at server side. Client Id and Client secret should maintained at server end.
     https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
     **/
-    botOptions.clientId = "cs-4d838ef9-390e-535f-bb82-e75d9e6b200e";
-    botOptions.clientSecret = "85vOb7AH4j4wkepvOkoIl7+L837ha14bCwOTEbN6EIA=";
+    botOptions.clientId = "cs-b5fa1571-f74c-50ed-bfbd-8457cac07a7f";
+    //botOptions.clientSecret = "z3S7YFc1hsmv/cvcB538ATs0T1HCLzu26q6y32Nm/EA=";
     botOptions.brandingAPIUrl = botOptions.koreAPIUrl +'websdkthemes/'+  botOptions.botInfo._id+'/activetheme';
     botOptions.enableThemes = true;
+    
 // for webhook based communication use following option 
 // botOptions.webhookConfig={
 //     enable:true,
@@ -54,7 +60,7 @@
         isSpeechEnabled: false,			// set true, to hide mic icon
         allowGoogleSpeech: true,		// set true, to use Google speech engine instead KORE.AI engine.This feature requires valid Google speech API key. (Place it in 'web-kore-sdk/libs/speech/key.js')
         allowLocation: false,			// set false, to deny sending location to server
-        loadHistory: true,				// set true to load recent chat history
+        loadHistory: false,				// set true to load recent chat history
         messageHistoryLimit: 10,		// set limit to load recent chat history
         autoEnableSpeechAndTTS: false, 	// set true, to use talkType voice keyboard.
         graphLib: "d3" ,				// set google, to render google charts.This feature requires loader.js file which is available in google charts documentation.

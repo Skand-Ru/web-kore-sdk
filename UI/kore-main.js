@@ -4,17 +4,29 @@
         function assertion(options, callback) {
             var jsonData = {
                 "clientId": options.clientId,
-                "clientSecret": options.clientSecret,
                 "identity": options.userIdentity,
                 "aud": "",
-                "isAnonymous": false
+                "isAnonymous": true
             };
+            //url: options.JWTUrl
             $.ajax({
                 url: options.JWTUrl,
                 type: 'post',
-                data: jsonData,
+                data: JSON.stringify({
+                    iss: options.clientId,
+                    sub: options.userIdentity,
+                    aud: "",
+                    isAnonymous: true
+                }),
                 dataType: 'json',
+                headers:{
+                    'client_id':'0oa3s6ej5qHuwgRAv1d7',
+                    'client_secret':'c4rgn7ff6b9Qwy4oEO8D0rezklNbOh5UBES9iee_',
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
                 success: function (data) {
+                    console.log('Data from MuleSoft API', data);
                     options.assertion = data.jwt;
                     options.handleError = koreBot.showError;
                     options.chatHistory = koreBot.chatHistory;

@@ -3,7 +3,6 @@
 .liteTheme-one { /*--Theme one kore lite--*/
 
     /* Chat Window Main */
-
     --sdk-chat-window-bg-color:#FFFFFF;
     --sdk-chat-window-font-style:"Inter";
     --sdk-chat-window-box-shadow:0 10px 25px 0 rgba(0, 0, 0, 0.2);
@@ -13,7 +12,7 @@
 
     --sdk-chat-window-bot-bubble-bg:#1e5799;
     --sdk-chat-window-bot-bubble-font-clr:#333;
-    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 2px;
+    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 12px;
     --sdk-chat-window-bot-bubble-border-clr:#F1F0F0;
     --sdk-chat-window-bot-bubble-agent-bg:#bef3e7;
 
@@ -88,7 +87,7 @@
 
     --sdk-chat-window-bot-bubble-bg:#262626;
     --sdk-chat-window-bot-bubble-font-clr:#fff;
-    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 2px;
+    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 12px;
     --sdk-chat-window-bot-bubble-border-clr:#262626;
     --sdk-chat-window-bot-bubble-agent-bg:#bef3e7;
 
@@ -162,7 +161,7 @@
 
     --sdk-chat-window-bot-bubble-bg:#EFF0F1;
     --sdk-chat-window-bot-bubble-font-clr:#202124;
-    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 2px;
+    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 12px;
     --sdk-chat-window-bot-bubble-border-clr:#EFF0F1;
     --sdk-chat-window-bot-bubble-agent-bg:#bef3e7;
 
@@ -237,7 +236,7 @@
 
     --sdk-chat-window-bot-bubble-bg:#262626;
     --sdk-chat-window-bot-bubble-font-clr:#ffffff;
-    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 2px;
+    --sdk-chat-window-bot-bubble-shape:12px 12px 12px 12px;
     --sdk-chat-window-bot-bubble-border-clr:#F1F0F0;
     --sdk-chat-window-bot-bubble-agent-bg:#bef3e7;
 
@@ -335,7 +334,7 @@
 
     /* Bot Header Variables */
 
-    --sdk-chat-window-header-bg:#1e5799;
+    --sdk-chat-window-header-bg:#003595;
     --sdk-chat-window-header-font-clr:var(--sdk-chat-custom--widgetHeader-fontColor);
     --sdk-chat-window-header-border-clr:var(--sdk-chat-custom--widgetHeader-borderColor);
     
@@ -651,7 +650,7 @@
     color: var(--sdk-chat-widow-default-white);
     margin-top: 6px;
     padding: 8px 20px 8px 10px;
-    background: #5B9BD5;
+    background: #003595;
     border-radius: 20px;
     display: block;
     opacity: 0;
@@ -665,18 +664,22 @@
 
 .kore-chat-window.minimize .minimized {
     display: block;
-    background: #1e5799;
+    background: #003595;
     padding: 16px;
     width: 293px;
     height: 54px;
     cursor: pointer;
     position: absolute;
-    top: 13px;
-    right: 0;
+    top: -5px;
+    right: 18px;
     font-size: 20px;
     font-weight: 500;
     color: white;
     text-align: center;
+    border-radius: 49px;
+    box-shadow: 3px 5px 6px #888888;
+    transition: all 0.3s ease 0s;
+    font-family: 'Open Sans', sans-serif;
 }
 .custom_logo{
     height: 40px;
@@ -716,6 +719,8 @@
     line-height: 49px;
     padding: 0 0 0 20px;
     width: 100%;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px
 }
 
 .kore-chat-window .kore-chat-header .header-title {
@@ -741,7 +746,7 @@
     float: right;
     padding-top: 0;
     color: var(--sdk-chat-window-header-font-clr);
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .kore-chat-window .kore-chat-header .chat-box-controls button {
@@ -789,7 +794,7 @@
     top: 50px;
     bottom: 53px;
     background-color: var(--sdk-chat-window-body-bg);
-    font-family: "Lato", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -928,10 +933,15 @@
     background-color: green;
 }
 
+.kore-chat-window.minimize .minimized:hover{
+    box-shadow: 5px 9px 10px #888888 !important;
+    transform: translateY(-8px);
+}
+
 .kore-chat-window ul.chat-container li.fromOtherUsers .messageBubble {
     background-color: var(--sdk-chat-window-bot-bubble-bg);
     color: var(--sdk-chat-window-bot-bubble-font-clr);
-    border-radius: var(--sdk-chat-window-bot-bubble-shape);
+    border-radius: 12px 12px 12px 12px;
     border: 1px solid var(--sdk-chat-window-bot-bubble-border-clr);
     padding: 12px 15px;
     max-width: 95%;
@@ -973,6 +983,8 @@
     background: var(--sdk-chat-window-footer-bg);
     color: var(--sdk-chat-window-footer-font-clr);
     padding: 5px 20px;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
 }
 
 .kore-chat-window .sendBtnCnt .disabled {
@@ -1181,12 +1193,13 @@
 
 .kore-chat-window .buttonTmplContent .buttonTmplContentChild.quickReplyDiv {
     display: table-cell;
-    padding: 10px 10px 7px 0;
     border: none;
+    padding: 10px -2px 7px 0;
+    border-radius: 22px;
 }
 
 .kore-chat-window .buttonTmplContent .buttonTmplContentChild .quickReply {
-    border: 1px solid var(--sdk-chat-window-btn-border-clr);
+    /* border: 1px solid var(--sdk-chat-window-btn-border-clr); */
     padding: 4px 13px;
     border-radius: 20px;
     display: table;
