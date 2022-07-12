@@ -32,7 +32,6 @@
     https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
     **/
     botOptions.clientId = "cs-b5fa1571-f74c-50ed-bfbd-8457cac07a7f";
-    //botOptions.clientSecret = "z3S7YFc1hsmv/cvcB538ATs0T1HCLzu26q6y32Nm/EA=";
     botOptions.brandingAPIUrl = botOptions.koreAPIUrl +'websdkthemes/'+  botOptions.botInfo._id+'/activetheme';
     botOptions.enableThemes = true;
     

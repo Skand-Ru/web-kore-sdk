@@ -3072,12 +3072,6 @@
                     <div id="textFromServer"></div> \
                 </div> \
                 {{/if}}\
-                <div class="sdkFooterIcon"> \
-                    <button class="sdkAttachment attachmentBtn" title="${botMessages.attachmentText}"> \
-                        <i class="paperclip"></i> \
-                    </button> \
-                    <input type="file" name="Attachment" class="filety" id="captureAttachmnts"> \
-                </div> \
                 {{if !(isSendButton)}}<div class="chatSendMsg">${botMessages.entertosend}</div>{{/if}} \
             </div>';
 
