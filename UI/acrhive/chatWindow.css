@@ -1194,10 +1194,8 @@
 .kore-chat-window .buttonTmplContent .buttonTmplContentChild.quickReplyDiv {
     display: table-cell;
     border: none;
-    padding: 10px 8px 7px 0px !important;
+    padding: 10px -2px 7px 0;
     border-radius: 22px;
-    background-color: transparent;
-    cursor: auto !important;
 }
 
 .kore-chat-window .buttonTmplContent .buttonTmplContentChild .quickReply {
@@ -1205,7 +1203,6 @@
     padding: 4px 13px;
     border-radius: 20px;
     display: table;
-    cursor: pointer;
     white-space: nowrap;
     color: var(--sdk-chat-window-btn-font-clr);
     background: var(--sdk-chat-window-btn-default-bg);

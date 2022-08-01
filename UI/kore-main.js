@@ -20,8 +20,8 @@
                 }),
                 dataType: 'json',
                 headers:{
-                    'client_id':'0oa3s6ej5qHuwgRAv1d7',
-                    'client_secret':'c4rgn7ff6b9Qwy4oEO8D0rezklNbOh5UBES9iee_',
+                    'client_id':'d28df4c5608a48bca0564b795793fcd4',
+                    'client_secret':'8Ec3fAFbbB434473B293d739468D9880',
                     'Content-Type':'application/json',
                     'Access-Control-Allow-Origin': '*'
                 },

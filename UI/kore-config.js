@@ -11,7 +11,7 @@
     botOptions.koreAnonymousFn = koreAnonymousFn;
     botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
 
-    botOptions.JWTUrl = "https://chatbot-exp-api-dev.us-e2.cloudhub.io/api/generatetoken";
+    botOptions.JWTUrl = "https://dev.api.alcon.com/chatbot-exp-api/api/generatetoken";
     let userSession = '';
     if(window.ALCON_USER && window.ALCON_USER.email){
         userSession = window.ALCON_USER.email;
