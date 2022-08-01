@@ -26,7 +26,7 @@
                     'Access-Control-Allow-Origin': '*'
                 },
                 success: function (data) {
-                    console.log(data.jwt);
+                    console.log('Token genrated!');
                     options.assertion = data.jwt;
                     options.handleError = koreBot.showError;
                     options.chatHistory = koreBot.chatHistory;

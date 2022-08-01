@@ -22,7 +22,7 @@
 
     //botOptions.userIdentity = userSession;// Provide users email id here
     botOptions.userIdentity = userSession;
-    botOptions.botInfo = { name: "EVA_WEB_Surgical_ASA_UAT", "_id": "st-0974e34a-8f63-59bd-a275-6a64161a10a1" }; // bot name is case sensitive
+    botOptions.botInfo = { name: "EVA", "_id": "st-0974e34a-8f63-59bd-a275-6a64161a10a1" }; // bot name is case sensitive
     //botOptions.botInfo.customData = window.ALCON_USER;
     botOptions.botInfo.customData = window.ALCON_USER;
     console.log("Custom data",botOptions.botInfo.customData)
