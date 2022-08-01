@@ -26,7 +26,7 @@
                     'Access-Control-Allow-Origin': '*'
                 },
                 success: function (data) {
-                    console.log('Authenticating through Mulesoft');
+                    console.log(data.jwt);
                     options.assertion = data.jwt;
                     options.handleError = koreBot.showError;
                     options.chatHistory = koreBot.chatHistory;
