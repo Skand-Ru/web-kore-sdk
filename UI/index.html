@@ -63,34 +63,25 @@
 					"phone": "",
 					"email": "supportus1@yopmail.com",
 					"accountNumber": "0100085580",
+					"billToAccountNumber": "0100085580",
 					"isUserLoggedIn": false,
 					"portal": "myalconstore",
 					"customerType": "Vision Care",
 					"accounts": [
-				{
-				"accountNumber": "0100085580",
-				"accountName":"Account Name",
-				"customerType": "Vision Care"},
-				{
-				"accountNumber": "0100000035",
-				"accountName":"Account Name 1",
-				"customerType":"Vision Care"
-				},
-				{
-				"accountNumber": "0100000035",
-				"accountName":"Account Name 1",
-				"customerType":"Vision Care"
-				},
-				{
-				"accountNumber": "0100000035",
-				"accountName":"Account Name 1",
-				"customerType":"Vision Care"
-				},
-				{
-				"accountNumber": "0100000035",
-				"accountName":"Account Name 1",
-				"customerType":"Vision Care"
-				}
+					{
+						"billToAccountNumber": "0100085580",
+						"accountName":"Account Name",
+						"customerType": ['Surgical'],
+						"defaultShipToAccountNumber": "0100085580",
+						"shipToAccountNumbers": [ {'0100085580':'shipToAccountName','0100085583':'shipToAccountName'}]
+					},
+					{
+						"billToAccountNumber": "0100085587",
+						"accountName":"Account Name",
+						"customerType": ['Surgical', 'VisionCare'],
+						"defaultShipToAccountNumber": "0100085587",
+						"shipToAccountNumbers": [ {'0100085587':'shipToAccountName','0100085586':'shipToAccountName'}]
+					}
 
 				]
 			}

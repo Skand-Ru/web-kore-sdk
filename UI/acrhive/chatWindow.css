@@ -818,6 +818,7 @@
 .kore-chat-window a {
     color: var(--sdk-chat-window-btn-default-bg);
     text-decoration: none;
+    font-size: 30px;
 }
 
 .kore-chat-window ul.chat-container li:first-child {
@@ -1315,10 +1316,10 @@
 
 .kore-chat-window .listTmplContent .listTmplContentHeading {
     padding: 10px;
-    background: #f4f4f4;
+    background: var(--sdk-chat-window-bot-bubble-bg);
     margin-bottom: 0;
     border-radius: 12px 12px 0 0;
-    font-size: 15px;
+    font-size: 100%;
 }
 
 .kore-chat-window .listTmplContent .listItemTitle,
