@@ -11,7 +11,7 @@
     botOptions.koreAnonymousFn = koreAnonymousFn;
     botOptions.recorderWorkerPath = '../libs/recorderWorker.js';
 
-    botOptions.JWTUrl = "https://dev.api.alcon.com/chatbot-exp-api/api/generatetoken";
+    botOptions.JWTUrl = "https://qa.api.alcon.com/chatbot-exp-api/api/generatetoken";
     let userSession = '';
     if(window.ALCON_USER && window.ALCON_USER.email){
         userSession = window.ALCON_USER.email;
@@ -22,7 +22,7 @@
 
     //botOptions.userIdentity = userSession;// Provide users email id here
     botOptions.userIdentity = userSession;
-    botOptions.botInfo = { name: "EVA", "_id": "st-503584ee-e9ab-53b6-82b0-a3ddacb7d482" }; // bot name is case sensitive
+    botOptions.botInfo = { name: "EVA", "_id": "st-0974e34a-8f63-59bd-a275-6a64161a10a1" }; // bot name is case sensitive
     //botOptions.botInfo.customData = window.ALCON_USER;
     botOptions.botInfo.customData = window.ALCON_USER;
     console.log("Custom data",botOptions.botInfo.customData)
@@ -31,7 +31,7 @@
     Refer below document for JWT token generation at server side. Client Id and Client secret should maintained at server end.
     https://developer.kore.ai/docs/bots/sdks/user-authorization-and-assertion/
     **/
-    botOptions.clientId = "cs-b5fa1571-f74c-50ed-bfbd-8457cac07a7f";
+    botOptions.clientId = "cs-5cbef41c-ee01-5144-ae59-093a942db4f9";
     botOptions.brandingAPIUrl = botOptions.koreAPIUrl +'websdkthemes/'+  botOptions.botInfo._id+'/activetheme';
     botOptions.enableThemes = true;
     
